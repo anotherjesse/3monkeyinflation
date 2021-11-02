@@ -37,6 +37,14 @@ function addMonkey(c) {
     return true;
 }
 
+function removeMonkey() {
+    if (mesh.count > 0) {
+        locs.pop()
+        mesh.count -= 1
+    }
+}
+    
+
 function init() {
 
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 100);
@@ -72,10 +80,10 @@ function init() {
 
     controller1.addEventListener('selectstart', () => addMonkey(controller1));
     controller1.addEventListener('selectend', () => controller1.locPressed = false);
-    controller1.addEventListener('squeezestart', () => mesh.count = Math.max(0, mesh.count-1));
+    controller1.addEventListener('squeezestart', removeMonkey);
     controller2.addEventListener('selectstart', () => addMonkey(controller2));
     controller2.addEventListener('selectend', () => controller2.locPressed = false);
-    controller2.addEventListener('squeezestart', () => mesh.count = Math.max(0, mesh.count-1));
+    controller2.addEventListener('squeezestart', removeMonkey);
 
     window.addEventListener('resize', onWindowResize);
 }

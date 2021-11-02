@@ -1,18 +1,9 @@
-# 3monkey
+# 3 Monkey Inflation
 
 This is based on the three.js example [WebGL Instancing Dynamic](https://threejs.org/examples/?q=instancing#webgl_instancing_dynamic)
 
-I wanted to learn how to modify many instances of the same mesh
-and interact with them using the controllers.
+This was based on my previous experiment "3monkeys" - this one I wanted to play a bit more with the controller input.
 
-The controller scaling setup is a little wonky - since you don't point and scale just what the controller is point at. 
+As you press the select button, a monkey balloon is added where the controller is.  It inflates until you release the controller.
 
-You just hold select and move your hands closer/further away to scale everything.
-
-This might mean the "room" moves away from you...
-
-Oh, and the monkeys move around using simplex noise
-
-You can hold use your left select to move all the monkeys at the same time.
-
-I wanted to explore rotation - but that involved quaterions and I didn't have time yet.
+There is a bit of simplex noise to make the monkeys heads move a bit
